@@ -31,7 +31,8 @@ int main(int argc, char const* argv[]) {
   vector<string> args = vector<string>(argv, argv + argc);
   // Convert argv to a vector<string>. Name this variable args
   if (args.size() < 2) {
-   cout << "Please provide two arguments, length and width.\n";
+   cout << "Please provide two arguments, a rectangle's length and width.\n";
+   cout << "For example:\n";
     try {
       cout << args.at(0) << " 23 17\n";
     } catch (out_of_range const& problem) {
@@ -61,7 +62,7 @@ int main(int argc, char const* argv[]) {
   // error message. Don't forget to use try and catch.
   // If there aren't enough arguments, return 1 (end the program).
   // Declare two int variables, input_length and input_width
-  // TODO: Use stoi() and convert argument 1 and argument 2 from strings
+  // Use stoi() and convert argument 1 and argument 2 from strings
   // to integers. Store arugment 1 in input_length and argument 2 in
   // input_width. Don't forget to use try and catch.
   // Declare an integer variable named area.
