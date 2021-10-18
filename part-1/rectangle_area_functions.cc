@@ -1,3 +1,10 @@
+// Vanessa Roque
+// CPSC120-19
+// 2021-10-18
+// 
+// Lab-06-01
+//
+// This function claculates the area of a triangle
 
 /// \file functions.cc
 /// Function definitions used in this project
@@ -23,8 +30,10 @@
 /// \param length the length of the rectangle
 /// \param width the width the rectangle
 /// \returns the area of the rectangle defined by \p length and \p width
+
 int RectangleArea(int length, int width) {
   int area = 0;
+  area = length * width;
   // TODO: Implement this function given the explanation given above.
   return area;
 }
