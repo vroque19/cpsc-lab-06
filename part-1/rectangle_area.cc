@@ -7,6 +7,7 @@
 // Lab 06-01
 //
 // This calculates the area of a rectangle!
+//
 
 /// \file rectangle_area.cc
 /// Command line program that computes the area of the rectangle.
