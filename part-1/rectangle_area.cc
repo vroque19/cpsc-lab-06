@@ -4,9 +4,9 @@
 // vroque19@csu.fullerton.edu
 // @vroque19
 //
-//Lab-06-01
+// Lab-06-01
 //
-//
+// This calculates the area of a rectangle
 
 /// \file rectangle_area.cc
 /// Command line program that computes the area of the rectangle.
