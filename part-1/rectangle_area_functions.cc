@@ -1,7 +1,9 @@
 // Vanessa Roque
-// CPSC120-19
+// CPSC 120-19
 // 2021-10-18
-// 
+// vroque19@csu.fullerton.edu
+// @vroque19
+//
 // Lab-06-01
 //
 // This function claculates the area of a triangle
