@@ -12,7 +12,7 @@
 /// Function definitions used in this project
 
 /// Calculate the area of a triangle defined by \p length and \p width.
-///
+/// 
 /// The area of a triangle is the product of the \p length and \p width.
 ///
 /// Although rectangles with negative length and width exist, this program
@@ -36,6 +36,9 @@
 int RectangleArea(int length, int width) {
   int area = 0;
   area = length * width;
-  // TODO: Implement this function given the explanation given above.
+  if(length >= 0 && width >=0) {
+    area = length * width;
+  }
+  // Implement this function given the explanation given above.
   return area;
 }

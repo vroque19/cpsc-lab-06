@@ -56,6 +56,7 @@ int main(int argc, char const* argv[]) {
   int area = 0;
   area = RectangleArea(input_length, input_width);
   cout << input_length << " x " << input_width << " = " << area << "\n";
+
   
   // Check to make sure there are enough arguments on the command line
   // for your program to continue. You need to have the length and width.

@@ -23,9 +23,22 @@
 /// \param input_number a positive integer between 0 and 2147483647
 /// \returns the integer square root of \p input_number, if input_number
 /// is negative, -1 is returned.
+
 int IntegerSquareRoot(int input_number) {
   int square_root = 0;
-  // TODO: Implement this function given the explanation given above.
+  int initial_estimate = input_number / 2;
+  int next_estimate = 0;
+
+  if (initial_estimate == 0) {
+    square_root = input_number;
+  } else {
+    next_estimate = (initial_estimate + input_number / initial_estimate) / 2;
+    while(next_estimate < initial_estimate) {
+      initial_estimate = next_estimate;
+      next_estimate = (initial_estimate + input_number / initial_estimate) / 2;
+    }
+    square_root = initial_estimate;
+  }
   return square_root;
 }
 
@@ -48,6 +61,17 @@ int IntegerSquareRoot(int input_number) {
 /// \returns true if \p number is prime, false otherwise
 bool IsPrime(int number) {
   bool is_prime_flag = false;
-  // TODO: Implement this function given the explanation given above.
+  // Implement this function given the explanation given above.
+  // Division by zero won't work with integers
+  // Everything is divisible by 1 so there isn't any value in testing it
+  if(number < 2){
+    is_prime_flag = false;
+  } else {
+  for(int counter = 2; counter < IntegerSquareRoot(number); counter++) {
+    if(number % counter == 0) {
+      is_prime_flag = false;
+    }
+   }
+  }
   return is_prime_flag;
 }
