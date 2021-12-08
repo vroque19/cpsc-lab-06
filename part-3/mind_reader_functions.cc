@@ -1,3 +1,12 @@
+// Vanessa Roque
+// CPSC 120-19
+// 2021-09-11
+// vroque19@csu.fullerton.edu
+// @vroque19
+//
+// Lab 06-03
+//
+// This is for the functions
 #include "mind_reader_functions.h"
 
 #include <unistd.h>
@@ -66,9 +75,26 @@ std::string FaceValue(const std::string& card) {
 /// \remark This is in the inverse of NumericValueToFaceValue()
 int NumericValue(const std::string& face_value) {
   int numeric_value = 0;
-  // TODO: Implement this function given the explanation given above.
+  try{
+    numeric_value = stoi(face_value);
+  } catch(exception const& problem) {
+    cout << "Problem converting the face value to a number. \n";
+    cout << problem.what() << "\n";
+    exit(1);
+  }
+  if(face_value == "A") {
+    numeric_value = 0;
+  } else if (face_value == "J") {
+    numeric_value = 10;
+  } else if (face_value == "Q") {
+    numeric_value = 11;
+  } else if (face_value == "K") {
+    numeric_value = 12;
+  }
   return numeric_value;
 }
+  // Implement this function given the explanation given above.
+
 
 /// Given a card, convert the card to the absolute deck ordered value.
 ///
@@ -110,7 +136,8 @@ int NumericValue(const std::string& face_value) {
 /// 52
 int DeckOrderValue(const std::string& card) {
   int deck_order_value = 0;
-  // TODO: Implement this function given the explanation given above.
+  deck_order_value = NumericValue(FaceValue(card)) * 4 + SuitOffset(card);
+  // Implement this function given the explanation given above.
   return deck_order_value;
 }
 
@@ -125,7 +152,14 @@ int DeckOrderValue(const std::string& card) {
 /// \remark This is the inverse of NumericValue()
 std::string NumericValueToFaceValue(int value) {
   string face_value;
-  // TODO: Implement this function given the explanation given above.
+  try {
+    face_value = std::to_string(value);
+  } catch (exception const& problem) {
+    cout << "Problem converting the number to a face value. \n";
+    cout << problem.what() << "\n";
+    exit(1);
+  }
+  // Implement this function given the explanation given above.
   return face_value;
 }
 
@@ -161,6 +195,7 @@ int SuitOffset(const std::string& suit) {
 /// \returns The simple_value of the secret card as an int (0, 1, ..., 11, 12)
 int FitchCheneySecretCardValue(int base_value, int steps) {
   int card_value = 0;
-  // TODO: Implement this function given the explanation given above.
+  card_value = (base_value + steps) % 13;
+  // Implement this function given the explanation given above.
   return card_value;
 }
