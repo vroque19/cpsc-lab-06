@@ -22,7 +22,9 @@ using namespace std;
 /// Main function for the rectangle_area project.
 int RectangleArea(int length, int width) {
   int area = 0;
-  area = length * width;
+  if (length >= 0 && width >=0) {
+    area = length * width;
+  }
   return area;
 }
 ///
@@ -32,15 +34,14 @@ int main(int argc, char const* argv[]) {
   vector<string> args = vector<string>(argv, argv + argc);
   // Convert argv to a vector<string>. Name this variable args
   if (args.size() < 2) {
-   cout << "Please provide two arguments, a rectangle's length and width.\n";
-   cout << "For example:\n";
+    cout << "Please provide two arguments, a rectangle's length and width.\n";
+    cout << "For example:\n";
     try {
       cout << args.at(0) << " 23 17\n";
     } catch (out_of_range const& problem) {
       cout << "You went out of bounds. \n";
-      cout << problem.what() << "\n";
-      return 1;
-    }
+      cout << problem.what() << "\n"; 
+     }
     return 1;
   }
   int input_length = 0;
@@ -48,7 +49,7 @@ int main(int argc, char const* argv[]) {
   try {
     input_length = stoi(args.at(1));
     input_width = stoi(args.at(2));
-  } catch(exception const& problem) {
+  } catch (exception const& problem) {
     cout << "Problem converting the input numbers.\n";
     cout << problem.what() << "\n";
     return(1);

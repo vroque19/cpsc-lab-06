@@ -33,7 +33,7 @@ int IntegerSquareRoot(int input_number) {
     square_root = input_number;
   } else {
     next_estimate = (initial_estimate + input_number / initial_estimate) / 2;
-    while(next_estimate < initial_estimate) {
+    while (next_estimate < initial_estimate) {
       initial_estimate = next_estimate;
       next_estimate = (initial_estimate + input_number / initial_estimate) / 2;
     }
@@ -64,11 +64,11 @@ bool IsPrime(int number) {
   // Implement this function given the explanation given above.
   // Division by zero won't work with integers
   // Everything is divisible by 1 so there isn't any value in testing it
-  if(number < 2){
+  if (number < 2){
     is_prime_flag = false;
   } else {
-  for(int counter = 2; counter < IntegerSquareRoot(number); counter++) {
-    if(number % counter == 0) {
+  for (int counter = 2; counter < IntegerSquareRoot(number); counter++) {
+    if (number % counter == 0) {
       is_prime_flag = false;
     }
    }

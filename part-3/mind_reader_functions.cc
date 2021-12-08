@@ -77,12 +77,12 @@ int NumericValue(const std::string& face_value) {
   int numeric_value = 0;
   try{
     numeric_value = stoi(face_value);
-  } catch(exception const& problem) {
+  } catch (exception const& problem) {
     cout << "Problem converting the face value to a number. \n";
     cout << problem.what() << "\n";
     exit(1);
   }
-  if(face_value == "A") {
+  if (face_value == "A") {
     numeric_value = 0;
   } else if (face_value == "J") {
     numeric_value = 10;
@@ -93,8 +93,7 @@ int NumericValue(const std::string& face_value) {
   }
   return numeric_value;
 }
-  // Implement this function given the explanation given above.
-
+ // Implement this function given the explanation given above.
 
 /// Given a card, convert the card to the absolute deck ordered value.
 ///

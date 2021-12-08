@@ -35,7 +35,7 @@
 
 int RectangleArea(int length, int width) {
   int area = 0;
-  area = length * width;
+ // area = length * width;
   if(length >= 0 && width >=0) {
     area = length * width;
   }
